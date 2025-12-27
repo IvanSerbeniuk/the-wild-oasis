@@ -72,7 +72,7 @@ function MainNav() {
 					</StyledNavLink>
 				</li>{" "}
 				<li>
-					<StyledNavLink to="/user">
+					<StyledNavLink to="/users">
 						<HiOutlineUsers /> <span>Users</span>
 					</StyledNavLink>
 				</li>
@@ -87,3 +87,23 @@ function MainNav() {
 }
 
 export default MainNav;
+
+
+
+
+
+
+
+
+
+//
+// curl 'https://rvukaztzqysgvrmwunfq.supabase.co/rest/v1/cabins?select=*' \
+// -H "apikey: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ2dWthenR6cXlzZ3ZybXd1bmZxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjY2OTk1NzIsImV4cCI6MjA4MjI3NTU3Mn0.wy6Zot4erreQFXhd-hxH2aCKFh54DkpeFkG2BAbEpME" \
+// -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ2dWthenR6cXlzZ3ZybXd1bmZxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjY2OTk1NzIsImV4cCI6MjA4MjI3NTU3Mn0.wy6Zot4erreQFXhd-hxH2aCKFh54DkpeFkG2BAbEpME"
+//
+//
+//
+//
+//
+//
+// npm i --save @supabase/supabase-js
