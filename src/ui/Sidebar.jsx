@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Logo from "./Logo.jsx";
 import MainNav from "./MainNav.jsx";
+import { useCabins } from "../features/cabins/useCabins.js";
 
 
 const StyledSidebar = styled.aside`
@@ -16,6 +17,8 @@ const StyledSidebar = styled.aside`
 `;
 
 function Sidebar() {
+	const { isLoading, cabins } = useCabins();
+
 	return (
 		<StyledSidebar>
 			<Logo />
