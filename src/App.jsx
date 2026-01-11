@@ -15,6 +15,7 @@ import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { Toaster } from "react-hot-toast";
 import Booking from "./pages/Booking.jsx";
 import Checkin from "./pages/Checkin.jsx";
+import ProtectedRoute from "./ui/ProtectedRoute.jsx";
 
 const queryClient = new QueryClient({
 	defaultOptions: {
@@ -32,44 +33,19 @@ function App() {
 				<GlobalStyle />
 				<BrowserRouter>
 					<Routes>
-						<Route element={<AppLayout />}>
-							<Route
-								index
-								element={<Navigate replace to="dashboard" />}
-							/>
-							<Route
-								path="/dashboard"
-								element={<Dashboard></Dashboard>}
-							/>
-							<Route
-								path="/bookings"
-								element={<Bookings></Bookings>}
-							/>
-							<Route
-								path="/bookings/:bookingId"
-								element={<Booking></Booking>}
-							/>
-							<Route
-								path="/checkin/:bookingId"
-								element={<Checkin></Checkin>}
-							/>
+						<Route element={<ProtectedRoute><AppLayout /></ProtectedRoute>}>
+							<Route index element={<Navigate replace to="dashboard" />} />
+							<Route path="/dashboard" element={<Dashboard></Dashboard>} />
+							<Route path="/bookings" element={<Bookings></Bookings>} />
+							<Route path="/bookings/:bookingId" element={<Booking></Booking>} />
+							<Route path="/checkin/:bookingId" element={<Checkin></Checkin>} />
 							<Route path="/cabins" element={<Cabins></Cabins>} />
 							<Route path="/users" element={<Users></Users>} />
-							<Route
-								path="/settings"
-								element={<Settings></Settings>}
-							/>
-							<Route
-								path="/account"
-								element={<Account></Account>}
-							/>
+							<Route path="/settings" element={<Settings></Settings>} />
+							<Route path="/account" element={<Account></Account>} />
 						</Route>
-
 						<Route path="/login" element={<Login></Login>} />
-						<Route
-							path="/*"
-							element={<PageNotFound></PageNotFound>}
-						/>
+						<Route path="/*" element={<PageNotFound></PageNotFound>} />
 					</Routes>
 				</BrowserRouter>
 				<Toaster
