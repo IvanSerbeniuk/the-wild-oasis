@@ -45,6 +45,7 @@ const GlobalStyles = createGlobalStyle`
 		}
 		
 		&.dark-mode{
+			//color: var(--color-grey-600);
 			--color-grey-0: #18212f;
 			--color-grey-50: #111827;
 			--color-grey-100: #1f2937;

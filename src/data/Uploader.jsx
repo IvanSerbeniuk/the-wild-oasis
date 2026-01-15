@@ -126,28 +126,30 @@ function Uploader() {
   }
 
   return (
-    <div
-      style={{
-        marginTop: "auto",
-        backgroundColor: "#e0e7ff",
-        padding: "8px",
-        borderRadius: "5px",
-        textAlign: "center",
-        display: "flex",
-        flexDirection: "column",
-        gap: "8px",
-      }}
-    >
-      <h3>SAMPLE DATA</h3>
+		<div
+			style={{
+				marginTop: "auto",
+				// backgroundColor: "#e0e7ff",
+				padding: "8px",
+				borderRadius: "5px",
+				textAlign: "center",
+				display: "flex",
+				flexDirection: "column",
+				gap: "8px",
+				color: "var(--color-grey-600)",
+				backgroundColor: "var(--color-grey-0)"
+			}}
+		>
+			<h3>SAMPLE DATA</h3>
 
-      <Button onClick={uploadAll} disabled={isLoading}>
-        Upload ALL
-      </Button>
+			<Button onClick={uploadAll} disabled={isLoading}>
+				Upload ALL
+			</Button>
 
-      <Button onClick={uploadBookings} disabled={isLoading}>
-        Upload bookings ONLY
-      </Button>
-    </div>
+			<Button onClick={uploadBookings} disabled={isLoading}>
+				Upload bookings ONLY
+			</Button>
+		</div>
   );
 }
 
