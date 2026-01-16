@@ -42,27 +42,14 @@ function App() {
 									</ProtectedRoute>
 								}
 							>
-								<Route
-									index
-									element={
-										<Navigate replace to="dashboard" />
-									}
+								<Route index element={<Navigate replace to="dashboard" />} />
+								<Route path="/dashboard" element={<Dashboard></Dashboard>}
 								/>
-								<Route
-									path="/dashboard"
-									element={<Dashboard></Dashboard>}
+								<Route path="/bookings" element={<Bookings></Bookings>}
 								/>
-								<Route
-									path="/bookings"
-									element={<Bookings></Bookings>}
+								<Route path="/bookings/:bookingId" element={<Booking></Booking>}
 								/>
-								<Route
-									path="/bookings/:bookingId"
-									element={<Booking></Booking>}
-								/>
-								<Route
-									path="/checkin/:bookingId"
-									element={<Checkin></Checkin>}
+								<Route path="/checkin/:bookingId" element={<Checkin></Checkin>}
 								/>
 								<Route
 									path="/cabins"
