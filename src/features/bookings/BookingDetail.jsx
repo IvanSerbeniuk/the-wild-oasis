@@ -18,6 +18,7 @@ import { useCheckout } from "../check-in-out/useCheckout.js";
 import Modal from "../../ui/Modal.jsx";
 import ConfirmDelete from "../../ui/ConfirmDelete.jsx";
 import { useDeleteBooking } from "./useDeleteBooking.js";
+import Empty from "../../ui/Empty.jsx";
 
 const HeadingGroup = styled.div`
 	display: flex;
@@ -31,10 +32,11 @@ function BookingDetail() {
 	const { checkout, isCheckingOut } = useCheckout();
 	const { isDeleting, deleteBooking } = useDeleteBooking();
 
-
 	const moveBack = useMoveBack();
 
 	if (isLoading) return <Spinner />;
+
+	if (!booking) return <Empty resourceName="booking" />;
 
 	const { status, id: bookingId } = booking;
 
@@ -78,15 +80,17 @@ function BookingDetail() {
 				)}
 
 				<Modal>
-					<Modal.Open opens='delete'>
-						<Button variation='danager'>Delete booking</Button>
+					<Modal.Open opens="delete">
+						<Button variation="danager">Delete booking</Button>
 					</Modal.Open>
 					<Modal.Window name="delete">
 						<ConfirmDelete
 							resourceName="booking"
 							disabled={isDeleting}
 							onConfirm={() => {
-								deleteBooking(bookingId, {onSettled: () => navigate(-1)});
+								deleteBooking(bookingId, {
+									onSettled: () => navigate(-1),
+								});
 							}}
 						/>
 					</Modal.Window>
