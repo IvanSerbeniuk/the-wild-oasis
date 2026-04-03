@@ -1,16 +1,148 @@
-# React + Vite
+# The Wild Oasis
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[Wild Oasis website](https://oasis-booking-online.netlify.app/dashboard)
 
-Currently, two official plugins are available:
+A modern booking management platform built with **React**, **Vite**, and **Supabase**, deployed on **Netlify**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![Demo of The Wild Oasis](public/demo.gif)
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Table of Contents
 
-## Expanding the ESLint configuration
+- [About](#about)
+- [Features](#features)
+- [Technologies](#technologies)
+- [Project Structure](#project-structure)
+- [Environment Variables](#environment-variables)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Deployment](#deployment)
+- [Contributing](#contributing)
+- [License](#license)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## About
+
+**The Wild Oasis** is a booking platform designed to manage cabins, users, and reservations efficiently.  
+Provide a short description of the purpose of your project here.
+
+---
+
+## Features
+
+- User authentication and profile management
+- Booking management (create, update, delete bookings)
+- Cabin management (add, edit, view cabins)
+- Dashboard with statistics (bookings, sales, etc.)
+- Upload sample data for testing
+- Responsive UI with sidebar navigation
+
+---
+
+## Technologies
+
+- **Frontend**: React, Vite, JSX
+- **Backend / Database**: Supabase (PostgreSQL)
+- **Hosting**: Netlify
+- **Styling**: CSS Modules / Styled Components
+- **Utilities**: Axios / Fetch, Custom hooks, Context API
+
+---
+
+## Project Structure
+
+```bash
+src/
+├── App.jsx # Main application component
+├── main.jsx # Entry point
+├── context/ # React context providers
+├── data/ # Static/sample data
+├── features/ # Feature-specific components
+├── hooks/ # Custom React hooks
+├── pages/ # Page components (Dashboard, Bookings, Users)
+├── services/ # API services, Supabase integration
+├── styles/ # Global and modular styles
+├── ui/ # Reusable UI components (buttons, cards)
+└── utils/ # Utility functions
+```
+
+Other important files:
+
+- `index.html` – main HTML file
+- `package.json` – project dependencies
+- `vite.config.js` – Vite configuration
+- `netlify.toml` – Netlify deployment settings
+
+---
+
+## Environment Variables
+
+Create a `.env` file in the root folder with:
+
+```
+VITE_SUPABASE_URL=your_supabase_url
+VITE_SUPABASE_KEY=your_supabase_key
+```
+⚠️ Never commit .env with secret keys. Use Netlify Environment Variables for deployment.
+
+--- 
+
+scInstallation
+Clone the repository:
+```
+git clone https://github.com/yourusername/the-wild-oasis.git
+cd the-wild-oasis
+```
+
+Install dependencies:
+```
+npm install
+```
+Create .env file with your Supabase credentials (see above).
+
+--- 
+
+##  Usage
+
+Start the development server:
+```
+npm run dev
+```
+Open http://localhost:5173
+ in your browser.
+
+Build for production:
+```
+npm run build
+```
+Preview the production build locally:
+```
+npm run preview
+```
+--- 
+##  Deployment
+
+Deployed on **Netlify**:
+
+1. Add the project to Netlify
+2. Set environment variables (`VITE_SUPABASE_URL` and `VITE_SUPABASE_KEY`)
+3. Trigger deployment
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch:
+
+```bash
+git checkout -b feature/xyz
+```
+3. Commit your changes:
+```
+git commit -m "Add feature"
+```
+4. Push to the branch:
+```
+git push origin feature/xyz
+```
