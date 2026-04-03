@@ -4,7 +4,7 @@
 
 A modern booking management platform built with **React**, **Vite**, and **Supabase**, deployed on **Netlify**.
 
-![Demo of The Wild Oasis](https://imgur.com/a/ggVT5lN)
+![Demo of The Wild Oasis](https://i.imgur.com/8PvzAya.gif)
 
 ---
 
